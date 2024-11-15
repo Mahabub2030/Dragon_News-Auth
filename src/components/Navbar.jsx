@@ -6,10 +6,10 @@ import { useContext } from "react";
 
 const Navbar = () => {
 
-  const { user } = useContext(AuthContext);
+  const { user,logOut } = useContext(AuthContext);
   return (
     <div className="flex justify-between">
-      <div className="">{ user && user.name}</div>
+      <div className="">{user && user.name}</div>
       <div className="nav space-x-5">
         <Link to='/'>Home</Link>
         <Link to='about'>About</Link>
@@ -19,7 +19,13 @@ const Navbar = () => {
         <div>
           <img src={userIcon} alt="" />
         </div>
-        <Link className="btn bg-black text-white" to="/auth/login">login</Link>
+        {
+          user && user?.email ?
+            <button onClick={logOut} className="btn bg-black text-white">logOut</button>
+
+            : <Link className="btn bg-black text-white" to="/auth/login">login</Link>
+        }
+
       </div>
     </div>
   );

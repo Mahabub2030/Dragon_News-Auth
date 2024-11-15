@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const NewsCard = (props ={}) => {
   const {news} = props || {};
@@ -23,7 +24,8 @@ const NewsCard = (props ={}) => {
 
       <h3 className="text-xl font-bold mb-2">{news.title}</h3>
       <p className="text-gray-600 text-sm mb-4">
-        {news.details.slice(0, 150)}... <span className="text-blue-500">Read More</span>
+        {news.details.slice(0, 150)}...
+         <Link to={`/news/${news._id}`}className="text-blue-500">Read More</Link>
       </p>
 
       <div className="flex items-center justify-between mt-4">
