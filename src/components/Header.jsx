@@ -2,6 +2,7 @@ import banner from'../assets/logo.png'
 import moment from 'moment';
 
 const Header = () => {
+  // console.log(import.meta.env.VITE_a)
   return (
     <div className='mt-5 space-y-3 font-poppins'>
       <img className='mx-auto w-[300]' src={banner} alt="" />

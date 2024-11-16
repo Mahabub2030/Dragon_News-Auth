@@ -5,7 +5,7 @@ import RightNav from "../components/layout-component/RightNav";
 const NewsDetalis = () => {
   const data = useLoaderData()
   const news = data.data[0];
-  console.log(news);
+  // console.log(news);
 
   return (
     <div>
@@ -19,7 +19,7 @@ const NewsDetalis = () => {
             <figure className="px-10 pt-10">
               <img
                 src={news?.image_url}
-                alt="Shoes"
+                alt="news"
                 className="rounded-xl" />
             </figure>
             <div className="card-body items-center text-center">

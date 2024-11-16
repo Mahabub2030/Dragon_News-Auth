@@ -5,6 +5,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 import { useContext } from "react";
 
 const Navbar = () => {
+//  console.log(import.meta.env.VITE_a)
 
   const { user,logOut } = useContext(AuthContext);
   return (
@@ -14,10 +15,18 @@ const Navbar = () => {
         <Link to='/'>Home</Link>
         <Link to='about'>About</Link>
         <Link to='career'>Career</Link>
+        <Link to='dev'>devinfromation</Link>
       </div>
       <div className="login flex gap-2 justify-center items-center">
         <div>
-          <img src={userIcon} alt="" />
+          {
+            user && user ?.email ? <div>
+              <img className="w-10 rounded-full" src={user?.photoURL} alt="" />
+              <p>{user.displayName}</p>
+            </div> : 
+             <img src={userIcon} alt="" />
+          }
+         
         </div>
         {
           user && user?.email ?
